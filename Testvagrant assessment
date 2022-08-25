@@ -1,0 +1,53 @@
+class Planetary:
+    count  = 0
+    max_moons = 0
+    found_gasses = ""
+    def __init__(self, name, gasses,moons,rings):
+        self.name = name
+        self.gasses = gasses
+        self.moons = moons
+        self.rings = rings
+     
+    
+    
+    
+    def get_moons_of_planet(self, moons,rings):
+        if (self.rings == "Yes"):
+            Planetary.count += self.moons
+    
+    def retive_gas_of_palets(self,gasses, moons):
+        if (self.moons > Planetary.max_moons):
+            Planetary.max_moons = self.moons
+            Planetary.found_gasses = self.gasses
+
+        
+        
+planet1 = Planetary("Mercury", "Non", 0, "No")       
+planet2 = Planetary("Venus", "Carbon Dioxide,Nitrogen", 0, "No")
+planet3 = Planetary("Earth", "Nitrogen,Oxygen", 1,"No")
+planet4 = Planetary("Jupitor", "Hydrogen,Helium", 79 ,"Yes")
+planet5 = Planetary("Saturn", "Hydrogen,Helium", 83, "Yes")
+planet6 = Planetary("Uranus", "Hydrogen,Helium, Methane" ,27 ,"Yes")
+
+planet1.get_moons_of_planet(0, "No")
+planet2.get_moons_of_planet(0, "No")
+planet3.get_moons_of_planet(1,"No")
+planet4.get_moons_of_planet(79 ,"Yes")
+planet5.get_moons_of_planet(83, "Yes")
+planet6.get_moons_of_planet(27 ,"Yes")
+print(Planetary.count)
+
+
+planet1.retive_gas_of_palets("Non", 0,)
+planet2.retive_gas_of_palets("Carbon Dioxide,Nitrogen", 0,)
+planet3.retive_gas_of_palets("Nitrogen,Oxygen",1)
+planet4.retive_gas_of_palets("Hydrogen,Helium", 79)
+planet5.retive_gas_of_palets("Hydrogen,Helium", 83)
+planet6.retive_gas_of_palets("Hydrogen,Helium, Methane" ,27)
+
+
+print(Planetary.found_gasses)
+
+
+
+        
